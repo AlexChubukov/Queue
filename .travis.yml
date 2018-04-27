@@ -70,4 +70,4 @@ before_script:
   - $CXX --version
   - cd ${TRAVIS_BUILD_DIR}
 script:
-- g++ -o queue main.cpp queue.hpp
+- g++ -o queue main.cpp queue.h
