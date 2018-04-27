@@ -29,8 +29,7 @@ public:
 	auto back()->T&;                   // Обратиться к последнему элементу очереди
 	bool operator==(const Queue& q);
 	template <typename T1> friend auto operator<<(std::ostream&, const Queue<T1>&)->std::ostream&;
-	//friend                                          
-	//auto operator>>(istream&, Queue&) -> istream&;  
+	template <typename T1> friend auto operator>>(istream&, Queue<T1>&)->istream&;
 	~Queue();
 	ForwardList<T>* get_begin();
 	ForwardList<T>* get_end();
@@ -196,7 +195,6 @@ auto operator>>(istream &stream, Queue<T> &q) -> istream &
 	stream >> value;
 	q.push(value);
 	return stream;
-	// TODO: вставьте здесь оператор return
 }
 template<typename T>
 ForwardList<T>* Queue<T>::get_begin() {
