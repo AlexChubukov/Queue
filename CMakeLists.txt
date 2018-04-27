@@ -28,8 +28,7 @@ if(BUILD_TESTS)
   file(GLOB ${PROJECT_NAME}_TEST_SOURCES tests/*.cpp)
   add_executable(tests ${${PROJECT_NAME}_TEST_SOURCES})
   target_link_libraries(tests ${PROJECT_NAME} Catch::Catch )
-
-  add_test(NAME test_name COMMAND tests "-s" "-r" "compact" "--use-colour" "yes")
+  
 endif()
 
 if(BUILD_EXAMPLES)
