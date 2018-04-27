@@ -1,10 +1,10 @@
 #include <catch.hpp>
 #include <sstream>
 #include <fstream>
-#include "queue.hpp"
+#include "queue.h"
 using namespace std;
 
-TEST_CASE("queue ini with other queue data")
+TEST_CASE("varios queues")
 {
     Queue <int> q1;
     Queue <int> q2 = {1, 2, 3, 4};
@@ -35,7 +35,6 @@ TEST_CASE("push")
 TEST_CASE("pop#1")
 {
     Queue<int> q4;
-    //если очередь пустая
     q4.pop();
     REQUIRE( q4.size() == 0);
 }
