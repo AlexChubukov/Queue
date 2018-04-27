@@ -37,13 +37,11 @@ TEST_CASE("pop#1")
     Queue<int> q4;
     q4.pop();
     REQUIRE( q4.size() == 0);
+	q4.push(1);
+	q4.pop();
+	REQUIRE( q4.size() == 0);
 }
-TEST_CASE("pop#2")
-{
-    Queue<int> q4 = {1};
-    q4.pop();
-    REQUIRE( q4.size() == 0);
-}
+
 TEST_CASE("pop#3")
 {
     Queue<int> q4 = {1, 2, 3, 4, 5};
