@@ -1,7 +1,7 @@
 #include <catch.hpp>
 #include <sstream>
 #include <fstream>
-#include "queue.hpp"
+#include "queue.h"
 using namespace std;
 
 TEST_CASE("queue ini with other queue data")
