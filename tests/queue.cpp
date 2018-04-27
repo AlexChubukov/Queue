@@ -43,17 +43,3 @@ TEST_CASE("pop#1")
 }
 
 
-
-TEST_CASE("eq")
-{
-    Queue <int>  q1;
-    Queue <int>  q2 = {1, 2, 3, 4};
-    Queue <int>  q3{q2};
-    q3.push(5);
-    ofstream output{ "queue.bin" };
-    output << q3;
-    Queue <int> q4;
-    ifstream input{ "queue.bin" };
-    input >> q4;
-    REQUIRE(! q4.empty() );
-}
