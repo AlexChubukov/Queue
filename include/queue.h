@@ -28,7 +28,7 @@ public:
 	auto front()->T&;                  // Обратиться к первому элементу очереди
 	auto back()->T&;                   // Обратиться к последнему элементу очереди
 	bool operator==(const Queue& q);
-	friend auto operator<<(std::ostream& out, Queue<T>& q)->std::ostream&{
+	friend auto operator<<(std::ostream& stream, Queue<T>& q)->std::ostream&{
 		if (q.empty()) {
 			stream << "Очередь пуста" << endl;
 			return stream;
