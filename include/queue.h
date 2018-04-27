@@ -28,8 +28,28 @@ public:
 	auto front()->T&;                  // Обратиться к первому элементу очереди
 	auto back()->T&;                   // Обратиться к последнему элементу очереди
 	bool operator==(const Queue& q);
-	template <typename T1> friend auto operator<<(std::ostream&, const Queue<T1>&)->std::ostream&;
-	template <typename T1> friend auto operator>>(istream&, Queue<T1>&)->istream&;
+	friend auto operator<<(std::ostream& out, Queue<T>& q)->std::ostream&{
+		if (q.empty()) {
+			stream << "Очередь пуста" << endl;
+			return stream;
+		}
+		ForwardList<T> *p = q.get_begin();
+		for (; p != q.get_end();) {
+			stream << p->data << "|";
+			p = p->next;
+		}
+		stream << p->data << endl;
+		return stream;
+	}
+	friend auto operator >> (std::istream& stream, Queue<T>& q)->std::istream&{
+		cout << "Введите число в очередь: ";
+		T value;
+		stream >> value;
+		q.push(value);
+		return stream;
+	}
+	//template <typename T1> friend auto operator<<(std::ostream&, const Queue<T1>&)->std::ostream&;
+	//template <typename T1> friend auto operator>>(istream&, Queue<T1>&)->istream&;
 	~Queue();
 	ForwardList<T>* get_begin();
 	ForwardList<T>* get_end();
@@ -171,31 +191,6 @@ Queue<T>::~Queue()
 	}
 }
 
-template<typename T>
-auto operator<<(ostream & stream, Queue<T> &q)->ostream &
-{
-	if (q.empty()) {
-	stream << "Очередь пуста" << endl;
-	return stream;
-	}
-	ForwardList<T> *p = q.get_begin();
-	for (; p != q.get_end();) {
-		stream << p->data << "|";
-		p = p->next;
-	}
-	stream << p->data << endl;
-	return stream;
-}
-
-template<typename T>
-auto operator>>(istream &stream, Queue<T> &q) -> istream &
-{
-	cout << "Введите число в очередь: ";
-	T value;
-	stream >> value;
-	q.push(value);
-	return stream;
-}
 template<typename T>
 ForwardList<T>* Queue<T>::get_begin() {
 	return begin;

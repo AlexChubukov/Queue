@@ -33,7 +33,7 @@ if(BUILD_TESTS)
 endif()
 
 if(BUILD_EXAMPLES)
-    file(GLOB EXAMPLE_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/sources/main.cpp")
+    file(GLOB EXAMPLE_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/main/*.cpp")
     foreach(EXAMPLE_SOURCE ${EXAMPLE_SOURCES})
         get_filename_component(EXAMPLE_NAME ${EXAMPLE_SOURCE} NAME_WE)
         set(EXAMPLE_TARGET_NAME example_${EXAMPLE_NAME})
