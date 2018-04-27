@@ -44,9 +44,9 @@ TEST_CASE("pop#1")
 
 TEST_CASE("pop#3")
 {
-    Queue<int> q4 = {1, 2, 3, 4, 5};
-    q4.pop();
-    REQUIRE( q4.size() == 4);
+    Queue<int> q5 = {1, 2, 3, 4, 5};
+    q5.pop();
+    REQUIRE( q5.size() == 4);
 }
 
 TEST_CASE("eq")
