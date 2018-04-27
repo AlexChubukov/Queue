@@ -144,6 +144,9 @@ auto Queue<T>::push(T value) -> void
 template<typename T>
 auto Queue<T>::pop() -> void
 {
+	if(begin==nullptr){
+		return;
+	}
 	ForwardList<T> *temp = begin;
 	begin = begin->next;
 	delete temp;
