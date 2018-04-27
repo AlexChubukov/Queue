@@ -1,5 +1,8 @@
 #include <catch.hpp>
-#include "queue.cpp"
+#include <sstream>
+#include <fstream>
+#include "queue.h"
+using namespace std;
 
 TEST_CASE("push")
 {
