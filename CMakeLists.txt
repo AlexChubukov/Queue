@@ -6,7 +6,7 @@ HunterGate(
     SHA1 "57d07480686f82ddc916a5980b4f2a18e5954c2b"
 )
 
-project(queue)
+project(BSTree)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -33,7 +33,7 @@ if(BUILD_TESTS)
 endif()
 
 if(BUILD_EXAMPLES)
-    file(GLOB EXAMPLE_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/sources/main.cpp")
+    file(GLOB EXAMPLE_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/main/*.cpp")
     foreach(EXAMPLE_SOURCE ${EXAMPLE_SOURCES})
         get_filename_component(EXAMPLE_NAME ${EXAMPLE_SOURCE} NAME_WE)
         set(EXAMPLE_TARGET_NAME example_${EXAMPLE_NAME})
